@@ -1,0 +1,12 @@
+.homeWrapper {
+  padding: 0 20px;
+}
+.homeNoteTitle {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #233e0c;
+}
+.homeNoteDetails {
+  font-size: 20px;
+  color: #555555;
+}
