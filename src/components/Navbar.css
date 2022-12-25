@@ -43,3 +43,38 @@
 .navbarLists {
   list-style: none;
 }
+.navbarList2 {
+  display: none;
+}
+.menu {
+  width: 35px !important;
+  height: 35px !important;
+  color: #ffffff !important;
+  cursor: pointer;
+  display: none !important;
+}
+@media screen and (max-width: 700px) {
+  .navbarList {
+    display: none;
+  }
+  .navbarList2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    right: 60px;
+    font-weight: 700;
+    margin-top: 270px;
+    background-color: #f7f7f7;
+    padding: 15px 40px 80px 10px;
+    border-radius: 4px;
+  }
+  .navLinks {
+    margin-top: 10px;
+  }
+  .menu {
+    display: block !important;
+  }
+}

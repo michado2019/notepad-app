@@ -20,9 +20,11 @@ const CreateNotes = ({setNotes}) => {
     });
   };
   const addNotes = (e) => {
-    setId(uniqid())
-    e.preventDefault();
-        setNotes(notes => [...notes, form])
+    if(form.Title !== '' && form.Text !== ''){
+        setId(uniqid())
+        e.preventDefault();
+            setNotes(notes => [...notes, form])
+    }
   }
   return (
     <div className="createNotesWrapper">

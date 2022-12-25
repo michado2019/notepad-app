@@ -1,6 +1,6 @@
 .createNotesWrapper {
   padding: 0 20px;
-  margin: 40px 0;
+  margin: 70px 0;
 }
 .createNotesForm {
   display: flex;
@@ -33,4 +33,9 @@
   border-radius: 4px;
   margin: 20px 0;
   cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+    .createNotesBtn{
+        margin: 20px auto;
+    }
 }
