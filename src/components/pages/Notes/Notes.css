@@ -1,0 +1,28 @@
+.notesWrapper{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+.noteDiv{
+    background-color: #f7f7f7;
+    width: 310px;
+    margin: 40px auto;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 7px;
+    box-shadow: 2px 4px 6px #cccccc;
+}
+.noteTitleDeleteDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 7px;
+}
+.noteTitle{
+  color: #233e0c;
+}
+.deleteIcon{
+    color: #555555 !important;
+}
+.noteText{
+    color: #555555;
+}
