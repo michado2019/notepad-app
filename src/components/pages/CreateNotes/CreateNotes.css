@@ -1,0 +1,36 @@
+.createNotesWrapper {
+  padding: 0 20px;
+  margin: 40px 0;
+}
+.createNotesForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.createNotesTitle {
+  color: #233e0c;
+  margin-top: 10px;
+}
+.createNotesLabel {
+  color: #555555;
+  margin: 10px 0;
+}
+.createNotesInput {
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 0;
+  background-color: #f7f7f7;
+}
+.createNotesBtn {
+  background-color: #2b2ef5;
+  padding: 15px 40px;
+  color: #ffffff;
+  border: 0;
+  border-radius: 4px;
+  margin: 20px 0;
+  cursor: pointer;
+}
