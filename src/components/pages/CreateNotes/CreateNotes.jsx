@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./CreateNotes.css";
-
+import uniqid from 'uniqid'
 const CreateNotes = ({setNotes}) => {
 
   // State
+  const [id, setId] = useState(uniqid())
   const [form, setForm] = useState({
     noteTitle: "",
     noteText: "",
@@ -15,10 +16,11 @@ const CreateNotes = ({setNotes}) => {
     const { name, value } = e.target;
     setForm({
       ...form,
-      [name]: value,
+      [name]: value, id
     });
   };
   const addNotes = (e) => {
+    setId(uniqid())
     e.preventDefault();
         setNotes(notes => [...notes, form])
   }
