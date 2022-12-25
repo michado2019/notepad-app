@@ -3,8 +3,8 @@ import './CreateNotes.css'
 
 const CreateNotes = () => {
   return (
-    <div>
-        CreateNotes
+    <div className='createNotes'>
+        <h1>Create notes</h1>
     </div>
   )
 }
