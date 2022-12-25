@@ -16,12 +16,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 2px 7px;
+    margin-bottom: 5px;
 }
 .noteTitle{
   color: #233e0c;
 }
 .deleteIcon{
     color: #555555 !important;
+    cursor: pointer;
 }
 .noteText{
     color: #555555;
