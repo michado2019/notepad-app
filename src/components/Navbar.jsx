@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Navbar.css'
 import appLogo from '../components/assets/notepadLogo.png'
 import { Link, NavLink } from 'react-router-dom'
@@ -17,17 +17,8 @@ const CustomNavlink = ({to, ...props}) => {
         />
     )
 }
-const Navbar = () => {
-
-  const [style, setStyle] = useState(false)
-
-  // Handler
-  function handleMenu(){
-  setStyle(prev => !prev)
-  }
-  function handleCancel(){
-    setStyle(true)
-    }
+const Navbar = ({handleMenu, handleCancel, style}) => {
+ 
   return (
     <div className='navbarWrapper'>
       <nav className='navbar'>
@@ -45,31 +36,17 @@ const Navbar = () => {
             <li className='navbarLists'>Notes</li>
             </CustomNavlink>
             <CustomNavlink to='/createNotes' className='navLinks'>
-            <li className='navbarLists'>CreateNotes</li>
+            <li className='navbarLists'>Create</li>
             </CustomNavlink>
         </ul>
+       
         {
             style ?
             <MenuOutlined className='menu' onClick={handleMenu}/> :
             <CancelOutlined className='menu' onClick={handleCancel}/>
         }
-        <ul className='navbarList2' 
-        style={{display: style? 'none' : 'flex', transition: 'all 1s', marginRight:'-50px'}}
-        onMouseOut={handleCancel}
-        >
-            <CustomNavlink to='/' className='navLinks'>
-            <li className='navbarLists'>Home</li>
-            </CustomNavlink>
-            <CustomNavlink to='/notes' className='navLinks'>
-            <li className='navbarLists'>Notes</li>
-            </CustomNavlink>
-            <CustomNavlink to='/createNotes' className='navLinks'>
-            <li className='navbarLists'>CreateNotes</li>
-            </CustomNavlink>
-        </ul>
       </nav>
     </div>
   )
 }
-
 export default Navbar

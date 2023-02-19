@@ -1,29 +1,67 @@
-import { DeleteOutline } from '@mui/icons-material'
-import React from 'react'
-import './Notes.css'
+import { DeleteOutline } from "@mui/icons-material";
+import React, { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import "./Notes.css";
 
-const Notes = ({notes, setNotes}) => {
-    
-    // Handler
-    function handleDelete(id){
-      setNotes(notes.filter(note => note.id !== id))
+const Notes = ({ notes, setNotes }) => {
+  // States
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Handler
+  function handleDelete(id) {
+    setNotes(notes.filter((note) => note.id !== id));
+  }
+  const handleTitleSearch = (e) => {
+    e.preventDefault();
+    let filter = e.target.value;
+    if (filter) {
+      setSearchParams({ filter: filter, y: "true" });
+    } else {
+      setSearchParams({});
     }
-    const notesArray = notes.map(note => {
-        return (
-            <div key={note.id} className='noteDiv'>
-                <div className='noteTitleDeleteDiv'>
-                <h2 className='noteTitle'>{note.noteTitle}</h2>
-                <DeleteOutline className='deleteIcon' onClick={() => handleDelete(note.id)}/>
-                </div>
-                <p className='noteText'>{note.noteText}</p>
-            </div>
-        )
-    })
-  return (
-    <div className='notesWrapper' key={notesArray}>
-        {notesArray}
-    </div>
-  )
-}
+  };
+  // useEffect
+  useEffect(() => {
+    localStorage.setItem("savedNote", JSON.stringify(notes));
+  }, [notes]);
 
-export default Notes
+  return (
+    <div className="noteWrapper">
+      <form className="noteSearchForm">
+        <input
+          type="text"
+          placeholder="Search note by title"
+          onChange={handleTitleSearch}
+        />
+      </form>
+      <div className="noteGrid">
+        {notes
+          .filter((note) => {
+            let filter = searchParams.get("filter");
+            if (!filter) return true;
+            let noteTitle = note.noteTitle.toUpperCase();
+            return noteTitle.includes(filter.toUpperCase());
+          })
+          .map((note) => {
+            return (
+              <div className="noteDiv">
+                <ul className="noteTitleDeleteDiv">
+                  <div>
+                    <div className="noteGrid">
+                      <li className="noteTitle">{note.noteTitle}</li>
+                    </div>
+                    <li className="noteText">{note.noteText}</li>
+                  </div>
+                  <DeleteOutline
+                    className="deleteIcon"
+                    onClick={() => handleDelete(note.id)}
+                  />
+                </ul>
+              </div>
+            );
+          })}
+      </div>
+    </div>
+  );
+};
+export default Notes;

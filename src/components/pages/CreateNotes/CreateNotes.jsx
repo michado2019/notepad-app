@@ -5,6 +5,7 @@ const CreateNotes = ({setNotes}) => {
 
   // State
   const [id, setId] = useState(uniqid())
+  const [style, setStyle] = useState(false)
   const [form, setForm] = useState({
     noteTitle: "",
     noteText: "",
@@ -24,12 +25,21 @@ const CreateNotes = ({setNotes}) => {
         setId(uniqid())
         e.preventDefault();
             setNotes(notes => [...notes, form])
+            setStyle(true)
     }
+    setForm({
+      noteTitle: "",
+      noteText: "",
+    })
   }
   return (
     <div className="createNotesWrapper">
       <form className="createNotesForm" onSubmit={addNotes}>
-        <h2 className="createNotesTitle">Create notes</h2>
+        {
+          style ?
+          <h2 className="createNotesTitle">Note saved successfully!</h2> :
+          <h2 className="createNotesTitle">Create notes</h2>
+        }
         <label className="createNotesLabel">Note title</label>
         <input
           type="text"
@@ -38,6 +48,7 @@ const CreateNotes = ({setNotes}) => {
           onChange={handleChange}
           name="noteTitle"
           value={form.noteTitle}
+          required
         />
         <label className="createNotesLabel">Note text</label>
         <input
@@ -47,11 +58,11 @@ const CreateNotes = ({setNotes}) => {
           onChange={handleChange}
           name="noteText"
           value={form.noteText}
+          required
         />
         <button className="createNotesBtn">Add Note</button>
       </form>
     </div>
   );
 };
-
 export default CreateNotes;

@@ -1,12 +1,51 @@
-.homeWrapper {
-  padding: 0 20px;
+.homeWrapper{
+  padding: 30px 40px;
+  max-width: 95%;
+}
+.homeNoteDetails{
+  max-width: 50%;
+}
+.homeFlex {
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .homeNoteTitle {
-  font-size: 24px;
+  font-size: 32px;
   margin: 20px 0;
   color: #233e0c;
 }
 .homeNoteDetails {
-  font-size: 20px;
+  font-size: 24px;
   color: #555555;
+}
+.homeCircle{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 4px 8px 9px #ccc;
+  background-color: #212121;
+  position: relative;
+}
+.homeCircle-quick_note{
+  color: #ccc;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+.homeCircle-click_me{
+  position: absolute;
+  margin-top: 70px;
+  margin-left: 75px;
+  color: #f3f3f3;
+}
+.homeCircle-link{
+text-decoration: none;
+}
+.homeNote-copyright{
+  font-weight: 700;
+  margin-top: 30px;
+  font-style: 32px;
+  color: #233e0c;
 }
