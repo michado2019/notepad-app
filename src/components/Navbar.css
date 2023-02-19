@@ -23,7 +23,7 @@
 }
 .logoText {
   font-size: 22px;
-  color: #233e0c;
+  color: #1f21a4;
 }
 .navbarList {
   display: flex;
@@ -35,7 +35,7 @@
 .navLinks {
   text-decoration: none;
   margin-left: 15px;
-  color: #555555;
+  color: #1f21a4;
 }
 .navLinks:hover {
   font-size: 23px;

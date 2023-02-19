@@ -14,7 +14,7 @@
 .homeNoteTitle {
   font-size: 32px;
   margin: 20px 0;
-  color: #233e0c;
+  color: #555555;
 }
 .homeNoteDetails {
   font-size: 24px;
@@ -58,6 +58,6 @@ text-decoration: none;
 .homeNote-copyright{
   font-weight: 700;
   margin-top: 30px;
-  font-style: 32px;
-  color: #233e0c;
+  font-style: 32px !important;
+  color: #1f21a4;
 }

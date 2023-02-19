@@ -34,13 +34,13 @@
   margin-bottom: 5px;
 }
 .noteTitle {
-  color: #233e0c;
+  color: #555555;
   font-weight: 700;
   list-style: none;
   font-size: 20px;
 }
 .deleteIcon {
-  color: #111;
+  color: #1f21a4;
 }
 .deleteIcon:hover {
     font-size: 32px;
