@@ -36,8 +36,8 @@
   list-style: none;
   color: #fff;
   margin: 10px;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 800;
+  font-size: 24px;
 }
 @media screen and (max-width: 480px) {
   .smallScreenWrapper {

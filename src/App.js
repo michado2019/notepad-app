@@ -15,7 +15,7 @@ function App() {
     const savedNote = localStorage.getItem('savedNote')
     return savedNote ? JSON.parse(savedNote) : []
   })
-  const [style, setStyle] = useState(false)
+  const [style, setStyle] = useState(true)
 
   // Handlers
    const handleMenu = () => {
