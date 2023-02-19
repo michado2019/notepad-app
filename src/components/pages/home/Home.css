@@ -61,3 +61,11 @@ text-decoration: none;
   font-style: 32px !important;
   color: #1f21a4;
 }
+@media screen and (max-width: 940px) {
+  .homeCircle{
+    display: none;
+  }
+  .homeNoteDetails{
+    max-width: 100%;
+  }
+}
