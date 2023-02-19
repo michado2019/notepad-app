@@ -31,14 +31,26 @@
 .homeCircle-quick_note{
   color: #ccc;
   position: absolute;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-left: 60px;
 }
 .homeCircle-click_me{
   position: absolute;
-  margin-top: 70px;
+  margin-top: 120px;
   margin-left: 75px;
   color: #f3f3f3;
+  animation: homeCircle-click_me 0.5s infinite ;
+}
+@keyframes homeCircle-click_me {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: initial;
+  }
 }
 .homeCircle-link{
 text-decoration: none;
