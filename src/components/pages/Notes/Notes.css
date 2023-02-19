@@ -5,7 +5,7 @@
     justify-content: space-between;
 }
 .noteSearchForm input{
-    width: 310px;
+    width: 350px;
     height: 40px;
     border-radius: 7px;
     outline: none;
@@ -19,7 +19,7 @@
 }
 .noteDiv {
   background-color: #f7f7f7;
-  width: 310px;
+  width: 350px;
   margin: 20px 20px;
   height: fit-content;
   padding: 5px 10px;
@@ -53,12 +53,38 @@
   color: #555555;
   margin-top: 10px;
 }
+@media screen and (max-width: 940px) {
+  .noteSearchForm input{
+    width: 320;
+  }
+  .noteDiv {
+  width: 320px;
+  }
+}
 @media screen and (max-width: 900px) {
-  .noteWrapper {
+  .noteSearchForm input {
+    width: 450px;
+  }
+  .noteGrid{
     grid-template-columns: 1fr;
   }
   .noteDiv {
-    background-color: #f7f7f7;
-    width: 80%;
+    width: 450px;
+    }
+}
+@media screen and (max-width: 600px) {
+  .noteSearchForm input {
+    width: 350px;
   }
+  .noteDiv {
+    width: 350px;
+    }
+}
+@media screen and (max-width: 375px) {
+  .noteSearchForm input{
+    width: 290px;
+  }
+  .noteDiv {
+    width: 290px;
+    }
 }
