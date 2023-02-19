@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <Navbar handleMenu={handleMenu} handleCancel={handleCancel} style={style}/>
       <div style={{display: style ? 'none': 'block'}}>
-      <SmallScreensNav />
+      <SmallScreensNav handleCancel={handleCancel} />
       </div>
        <Routes>
         <Route path='/' element={<Home />} />
