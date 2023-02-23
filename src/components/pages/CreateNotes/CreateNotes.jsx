@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./CreateNotes.css";
 import uniqid from 'uniqid'
+import { useNavigate } from "react-router-dom";
 const CreateNotes = ({setNotes}) => {
 
+  //useNavigate 
+  const navigate = useNavigate()
   // State
   const [id, setId] = useState(uniqid())
   const [style, setStyle] = useState(false)
@@ -31,6 +34,9 @@ const CreateNotes = ({setNotes}) => {
       noteTitle: "",
       noteText: "",
     })
+    if(form){
+      navigate('/notes')
+    }
   }
   return (
     <div className="createNotesWrapper">
