@@ -1,16 +1,35 @@
-import { DeleteOutline } from "@mui/icons-material";
-import React, { useEffect } from "react";
+import { Cancel, DeleteOutline } from "@mui/icons-material";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Notes.css";
 
 const Notes = ({ notes, setNotes }) => {
   // States
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const [deleteAlert, setDeleteAlert] = useState(false);
+  const [timeoutt, setTimeoutt] = useState("");
+  const [deleted, setDeleted] = useState("");
   // Handler
   function handleDelete(id) {
-    setNotes(notes.filter((note) => note.id !== id));
+    setDeleteAlert(true);
+    //Delayed delete
+    const timeout = setTimeout(() => {
+      setNotes(notes.filter((note) => note.id !== id));
+      setDeleteAlert(false);
+      setDeleted("Note deleted successfully");
+    }, [7000]);
+    setTimeoutt(timeout);
   }
+  const handleUndoDelete = () => {
+    clearTimeout(timeoutt);
+    setDeleteAlert(false);
+  };
+  useEffect(() => {
+    const interval2 = setTimeout(() => {
+      setDeleted("");
+      clearTimeout(interval2)
+    }, 10000);
+  }, [deleteAlert]);
   const handleTitleSearch = (e) => {
     e.preventDefault();
     let filter = e.target.value;
@@ -44,7 +63,7 @@ const Notes = ({ notes, setNotes }) => {
           })
           .map((note) => {
             return (
-              <div className="noteDiv">
+              <div className="noteDiv" key={note.id}>
                 <ul className="noteTitleDeleteDiv">
                   <div>
                     <div className="noteGrid">
@@ -61,6 +80,22 @@ const Notes = ({ notes, setNotes }) => {
             );
           })}
       </div>
+      <div
+        style={{ display: deleteAlert ? "flex" : "none" }}
+        className="noteDelete-alert"
+      >
+        <h2>Note deleting...</h2>
+        <h2 onClick={handleUndoDelete}>
+          Undo <Cancel />
+        </h2>
+      </div>
+      <h2
+        className="noteDelete-alert"
+        id="noteDelete-alert"
+        style={{ display: deleted !== "" ? "flex" : "none" }}
+      >
+        {deleted}
+      </h2>
     </div>
   );
 };

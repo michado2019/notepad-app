@@ -1,3 +1,11 @@
+.navbarWrapper{
+  height: 85px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 30px 20px;
+  background-color: #f2f2f2;
+}
 .navbarLogoLink {
   margin-right: auto;
   text-decoration: none;
@@ -5,9 +13,6 @@
 .navbar {
   display: flex;
   align-items: center;
-  background-color: #898383;
-  padding: 0 20px;
-  height: 100px;
 }
 .nav {
   padding: 10px 10px;
@@ -17,30 +22,29 @@
   align-items: center;
 }
 .appLogo {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   margin-right: 3px;
 }
 .logoText {
   font-size: 22px;
-  color: #1f21a4;
+  color: #790dcc;
 }
 .navbarList {
   display: flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   font-weight: 700;
 }
 .navLinks {
   text-decoration: none;
-  margin-left: 15px;
-  color: #1f21a4;
+  margin-left: 25px;
+  color: #790dcc;
 }
 .navLinks:hover {
-  font-size: 23px;
+  font-size: 21px;
   transition: all 0.3s;
-  border-bottom: 2px solid #000;
 }
 .navbarLists {
   list-style: none;
@@ -48,7 +52,7 @@
 .menu {
   width: 35px !important;
   height: 35px !important;
-  color: #ffffff !important;
+  color: #790dcc !important;
   cursor: pointer;
   display: none !important;
 }

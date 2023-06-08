@@ -1,9 +1,5 @@
 .homeWrapper{
-  padding: 30px 40px;
-  max-width: 95%;
-}
-.homeNoteDetails{
-  max-width: 50%;
+  padding: 50px 0;
 }
 .homeFlex {
   line-height: 32px;
@@ -11,61 +7,65 @@
   align-items: center;
   justify-content: space-between;
 }
+.homeNote-div{
+  max-width: 40vw;
+  text-align: center;
+}
 .homeNoteTitle {
-  font-size: 32px;
+  font-size: 24px;
   margin: 20px 0;
-  color: #555555;
+  color: #5d5d5d;
 }
 .homeNoteDetails {
-  font-size: 24px;
-  color: #555555;
-}
-.homeCircle{
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  box-shadow: 4px 8px 9px #ccc;
-  background-color: #212121;
-  position: relative;
-}
-.homeCircle-quick_note{
-  color: #ccc;
-  position: absolute;
-  margin-top: 80px;
-  margin-left: 60px;
-}
-.homeCircle-click_me{
-  position: absolute;
-  margin-top: 120px;
-  margin-left: 75px;
-  color: #f3f3f3;
-  animation: homeCircle-click_me 0.5s infinite ;
-}
-@keyframes homeCircle-click_me {
-  0%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 0.5;
-  }
-  100%{
-    opacity: initial;
-  }
-}
-.homeCircle-link{
-text-decoration: none;
+  font-size: 20px;
+  color: #888888;
 }
 .homeNote-copyright{
   font-weight: 700;
   margin-top: 30px;
-  font-style: 32px !important;
-  color: #1f21a4;
+  color: #5a2285;
+  font-size: 24px;
 }
-@media screen and (max-width: 940px) {
-  .homeCircle{
-    display: none;
+.homeNote-img{
+  height: 70vh;
+  width: 30vw;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1024px) {
+  .homeNote-img{
+    height: 60vh;
   }
-  .homeNoteDetails{
-    max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .homeFlex {
+    flex-direction: column-reverse;
+  }
+  .homeNote-img{
+    width: 50vw;
+  }
+  .homeNote-div{
+    max-width: 50vw;
+  }
+  .homeNote-copyright{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .homeNote-img{
+    width: 70vw;
+  }
+  .homeNote-div{
+    max-width: 70vw;
+  }
+  .homeNoteTitle {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .homeNote-img{
+    width: 90vw;
+  }
+  .homeNote-div{
+    max-width: 90vw;
   }
 }
