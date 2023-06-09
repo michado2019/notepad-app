@@ -1,9 +1,10 @@
-import { Cancel, DeleteOutline } from "@mui/icons-material";
+import { Cancel, DeleteOutline, Search } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Notes.css";
 
 const Notes = ({ notes, setNotes }) => {
+  console.log(notes)
   // States
   const [searchParams, setSearchParams] = useSearchParams();
   const [deleteAlert, setDeleteAlert] = useState(false);
@@ -44,8 +45,11 @@ const Notes = ({ notes, setNotes }) => {
     localStorage.setItem("savedNote", JSON.stringify(notes));
   }, [notes]);
 
+  //Date
+  const date = new Date().toLocaleDateString()
   return (
     <div className="noteWrapper">
+      <div className="noteForm-div">
       <form className="noteSearchForm">
         <input
           type="text"
@@ -53,6 +57,8 @@ const Notes = ({ notes, setNotes }) => {
           onChange={handleTitleSearch}
         />
       </form>
+      <Search className="noteSearch"/>
+      </div>
       <div className="noteGrid">
         {notes
           .filter((note) => {
@@ -65,11 +71,12 @@ const Notes = ({ notes, setNotes }) => {
             return (
               <div className="noteDiv" key={note.id}>
                 <ul className="noteTitleDeleteDiv">
-                  <div>
+                  <div className="noteTitle-text">
                     <div className="noteGrid">
                       <li className="noteTitle">{note.noteTitle}</li>
                     </div>
                     <li className="noteText">{note.noteText}</li>
+                    <li className="noteTitle" id="noteTitle">{date}</li>
                   </div>
                   <DeleteOutline
                     className="deleteIcon"

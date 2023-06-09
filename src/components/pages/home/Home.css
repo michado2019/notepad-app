@@ -1,5 +1,6 @@
 .homeWrapper{
-  padding: 50px 0;
+  background-color: #d5c9b6;
+  padding: 50px 40px;
 }
 .homeFlex {
   line-height: 32px;
@@ -27,13 +28,13 @@
   font-size: 24px;
 }
 .homeNote-img{
-  height: 70vh;
+  height: 80vh;
   width: 30vw;
   border-radius: 5px;
 }
 @media screen and (max-width: 1024px) {
   .homeNote-img{
-    height: 60vh;
+    height: 75vh;
   }
 }
 @media screen and (max-width: 768px) {

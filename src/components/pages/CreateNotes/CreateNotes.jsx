@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CreateNotes.css";
 import uniqid from 'uniqid'
 import { useNavigate } from "react-router-dom";
+import homeNoteImg from "../home/assets/main note.jpg"
 const CreateNotes = ({setNotes}) => {
 
   //useNavigate 
@@ -68,6 +69,9 @@ const CreateNotes = ({setNotes}) => {
         />
         <button className="createNotesBtn">Add Note</button>
       </form>
+      <div className="homeImg-div">
+           <img src={homeNoteImg} alt="img" className="homeNote-img" />
+        </div>
     </div>
   );
 };

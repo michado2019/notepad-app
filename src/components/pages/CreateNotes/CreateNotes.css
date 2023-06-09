@@ -1,41 +1,70 @@
 .createNotesWrapper {
-  padding: 0 20px;
-  margin: 70px 0;
+  background-color: #d5c9b6;
+  padding: 50px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .createNotesForm {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  width: 100%;
+  width: 40%;
+  margin: 0 auto;
 }
 .createNotesTitle {
-  color: #555555;
+  color: #5d5d5d;
   margin-top: 10px;
+  text-align: center;
 }
 .createNotesLabel {
-  color: #555555;
+  color: #5d5d5d;
   margin: 10px 0;
+  font-weight: 600;
 }
 .createNotesInput {
-  width: 100%;
   padding: 15px 10px;
   border-radius: 4px;
   outline: none;
-  border: 0;
-  background-color: #f7f7f7;
+  border: 1px solid #d7d7d7;
+  background-color: #ddd;
+  margin-bottom: 20px;
+}
+.createNotesInput:hover {
+  border-bottom: 3px solid #790dcc;
+  transition: all 0.3s;
 }
 .createNotesBtn {
-  background-color: #1f21a4;
+  background-color: #5a2285;
   padding: 15px 40px;
   color: #ffffff;
   border: 0;
   border-radius: 4px;
   margin: 20px 0;
   cursor: pointer;
+  font-weight: 600;
+}
+.createNotesBtn:hover {
+  color: #790dcc;
+  background-color: #f2f2f2;
+  border: 1px solid #790dcc;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .createNotesWrapper {
+    flex-direction: column-reverse;
+  }
+  .createNotesForm {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .createNotesForm {
+    width: 87%;
+  }
 }
 @media screen and (max-width: 480px) {
-    .createNotesBtn{
-        margin: 20px auto;
-    }
+  .createNotesForm {
+    width: 100%;
+  }
 }
