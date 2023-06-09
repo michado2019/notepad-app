@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./Notes.css";
 
-const Notes = ({ notes, setNotes }) => {
+const Notes = ({ notes, setNotes, style }) => {
   // States
   const [searchParams, setSearchParams] = useSearchParams();
   const [deleteAlert, setDeleteAlert] = useState(false);
@@ -74,7 +74,7 @@ const Notes = ({ notes, setNotes }) => {
 
   return (
     <div className="noteWrapper">
-      <div className="noteForm-div">
+      <div className="noteForm-div" style={{position: style?"sticky":""}}>
         <form className="noteSearchForm">
           <input
             type="text"

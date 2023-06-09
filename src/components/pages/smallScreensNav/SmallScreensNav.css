@@ -1,5 +1,5 @@
 .smallScreenWrapper {
-  background-color: #111;
+  background-color: #000;
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -11,13 +11,6 @@
 @keyframes smallScreenWrapper {
   0% {
     margin-left: -300px;
-    background-color: #555555;
-  }
-  50% {
-    background-color: #555555;
-  }
-  75% {
-    background-color: #3c3636;
   }
   100% {
     margin-left: initial;

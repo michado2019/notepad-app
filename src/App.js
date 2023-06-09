@@ -33,7 +33,7 @@ function App() {
       </div>
        <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/notes' element={<Notes notes={notes} setNotes={setNotes}/>} />
+        <Route path='/notes' element={<Notes notes={notes} setNotes={setNotes} style={style}/>} />
         <Route path='/createNotes' element={<CreateNotes setNotes={setNotes} />} />
        </Routes>
     </div>
