@@ -18,6 +18,12 @@
   margin-left: -20px;
   top: 65px;
 }
+.noteTotal{
+  margin-right: 40px;
+  color: #5d5d5d;
+  display: flex;
+  align-items: center;
+}
 .noteSearchForm input {
   width: 350px;
   height: 40px;
@@ -38,6 +44,31 @@
   height: 30px !important;
   color: #790dcc !important;
   margin-bottom: -15px;
+}
+.noteTotal-add{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.noteLength{
+  margin-left: 20px;
+  width: 50px !important;
+  height: 50px !important;
+  background-color: #d5c9b6;
+  border-radius: 50%;
+  color: #fff !important;
+  padding: 10px;
+  text-align: center;
+}
+.noteAdd{
+  margin-left: 40px;
+  width: 50px !important;
+  height: 50px !important;
+  background-color: #d5c9b6;
+  border-radius: 50%;
+  color: #fff !important;
+  padding: 10px;
+  cursor: pointer;
 }
 .noteGrid {
   display: grid;

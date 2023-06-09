@@ -1,9 +1,10 @@
-import { Cancel, DeleteOutline, Search } from "@mui/icons-material";
+import { Add, Cancel, DeleteOutline, Search } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import "./Notes.css";
 
 const Notes = ({ notes, setNotes, style }) => {
+
   // States
   const [searchParams, setSearchParams] = useSearchParams();
   const [deleteAlert, setDeleteAlert] = useState(false);
@@ -11,6 +12,9 @@ const Notes = ({ notes, setNotes, style }) => {
   const [deleted, setDeleted] = useState("");
   const [timer, setTimer] = useState("");
   const [timerr, setTimerr] = useState("");
+
+  //useNavigate
+  const navigate = useNavigate()
 
   // Handler
   function handleDelete(id) {
@@ -83,6 +87,10 @@ const Notes = ({ notes, setNotes, style }) => {
           />
         </form>
         <Search className="noteSearch" />
+      </div>
+      <div className="noteTotal-add">
+        <h2 className="noteTotal">Total: <div className="noteLength">{notes.length}</div></h2>
+        <Add className="noteAdd" onClick={() => navigate('/createNotes')}/>
       </div>
       <div className="noteGrid">
         {notes
