@@ -11,6 +11,15 @@
 .homeNote-div{
   max-width: 40vw;
   text-align: center;
+  animation: details 1s;
+}
+@keyframes details {
+  0%{
+    margin-top: -30px;
+  }
+  100%{
+    margin-top: 0;
+  }
 }
 .homeNoteTitle {
   font-size: 24px;

@@ -54,6 +54,15 @@
   border-radius: 7px;
   background-color: #d5c9b6;
   box-shadow: 2px 4px 6px #cccccc;
+  animation: notes 1s;
+}
+@keyframes notes {
+  0%{
+    margin-bottom: -200px;
+  }
+  100%{
+    margin-bottom: 0;
+  }
 }
 .noteDiv:hover {
   margin: 30px 20px;

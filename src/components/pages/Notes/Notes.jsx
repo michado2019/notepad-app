@@ -4,49 +4,44 @@ import { useSearchParams } from "react-router-dom";
 import "./Notes.css";
 
 const Notes = ({ notes, setNotes }) => {
-  console.log(notes)
   // States
   const [searchParams, setSearchParams] = useSearchParams();
   const [deleteAlert, setDeleteAlert] = useState(false);
   const [timeoutt, setTimeoutt] = useState("");
   const [deleted, setDeleted] = useState("");
-  const [timer, setTimer] = useState("")
-  const [timerr, setTimerr] = useState("")
+  const [timer, setTimer] = useState("");
+  const [timerr, setTimerr] = useState("");
+
   // Handler
   function handleDelete(id) {
     setDeleteAlert(true);
 
-    //Timer
-    setTimer(7)
+    //Delete timer
+    setTimer(7);
     const timer = setInterval(() => {
-    setTimer(prev => prev - 1)
-    setTimerr(timer)
-    }, 1000)
-    
-    //Delayed delete
+      setTimer((prev) => prev - 1);
+      setTimerr(timer);
+    }, 1000);
+
+    //Delaye delete for 7secs
     const timeout = setTimeout(() => {
       setNotes(notes.filter((note) => note.id !== id));
       setDeleteAlert(false);
       setDeleted("Note deleted successfully");
     }, [7000]);
+
+    //Clear timeout for delete
     setTimeoutt(timeout);
   }
   const handleUndoDelete = () => {
+    //Undo a delete process
     clearTimeout(timeoutt);
     setDeleteAlert(false);
   };
-  useEffect(() => {
-    const interval2 = setTimeout(() => {
-      setDeleted("");
-      clearTimeout(interval2)
-    }, 10000);
-  }, [deleteAlert]);
-  useEffect(() => {
-    if(timer<1){
-      setTimer("")
-      clearInterval(timerr)
-    }
-  }, [timer, timerr])
+
+  //Date
+  const date = new Date().toLocaleDateString();
+
   const handleTitleSearch = (e) => {
     e.preventDefault();
     let filter = e.target.value;
@@ -56,24 +51,38 @@ const Notes = ({ notes, setNotes }) => {
       setSearchParams({});
     }
   };
-  // useEffect
+
+  //UseEffects
+  useEffect(() => {
+    //Handle successful delete message
+    const interval2 = setTimeout(() => {
+      setDeleted("");
+      clearTimeout(interval2);
+    }, 10000);
+  }, [deleteAlert]);
+  useEffect(() => {
+    if (timer < 1) {
+      //Clear timer function
+      setTimer("");
+      clearInterval(timerr);
+    }
+  }, [timer, timerr]);
+
   useEffect(() => {
     localStorage.setItem("savedNote", JSON.stringify(notes));
   }, [notes]);
 
-  //Date
-  const date = new Date().toLocaleDateString()
   return (
     <div className="noteWrapper">
       <div className="noteForm-div">
-      <form className="noteSearchForm">
-        <input
-          type="text"
-          placeholder="Search note by title"
-          onChange={handleTitleSearch}
-        />
-      </form>
-      <Search className="noteSearch"/>
+        <form className="noteSearchForm">
+          <input
+            type="text"
+            placeholder="Search note by title"
+            onChange={handleTitleSearch}
+          />
+        </form>
+        <Search className="noteSearch" />
       </div>
       <div className="noteGrid">
         {notes
@@ -92,7 +101,9 @@ const Notes = ({ notes, setNotes }) => {
                       <li className="noteTitle">{note.noteTitle}</li>
                     </div>
                     <li className="noteText">{note.noteText}</li>
-                    <li className="noteTitle" id="noteTitle">{date}</li>
+                    <li className="noteTitle" id="noteTitle">
+                      {date}
+                    </li>
                   </div>
                   <DeleteOutline
                     className="deleteIcon"
