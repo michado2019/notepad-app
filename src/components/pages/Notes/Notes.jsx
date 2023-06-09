@@ -10,9 +10,19 @@ const Notes = ({ notes, setNotes }) => {
   const [deleteAlert, setDeleteAlert] = useState(false);
   const [timeoutt, setTimeoutt] = useState("");
   const [deleted, setDeleted] = useState("");
+  const [timer, setTimer] = useState("")
+  const [timerr, setTimerr] = useState("")
   // Handler
   function handleDelete(id) {
     setDeleteAlert(true);
+
+    //Timer
+    setTimer(7)
+    const timer = setInterval(() => {
+    setTimer(prev => prev - 1)
+    setTimerr(timer)
+    }, 1000)
+    
     //Delayed delete
     const timeout = setTimeout(() => {
       setNotes(notes.filter((note) => note.id !== id));
@@ -31,6 +41,12 @@ const Notes = ({ notes, setNotes }) => {
       clearTimeout(interval2)
     }, 10000);
   }, [deleteAlert]);
+  useEffect(() => {
+    if(timer<1){
+      setTimer("")
+      clearInterval(timerr)
+    }
+  }, [timer, timerr])
   const handleTitleSearch = (e) => {
     e.preventDefault();
     let filter = e.target.value;
@@ -93,7 +109,7 @@ const Notes = ({ notes, setNotes }) => {
       >
         <h2>Note deleting...</h2>
         <h2 onClick={handleUndoDelete}>
-          Undo <Cancel />
+          Undo <Cancel /> <span>{timer}</span>
         </h2>
       </div>
       <h2
